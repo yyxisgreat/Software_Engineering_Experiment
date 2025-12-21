@@ -1,0 +1,36 @@
+# 构建目录
+build/
+cmake-build-*/
+
+# CMake 生成文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# 编译产物
+*.o
+*.a
+*.so
+*.exe
+backup-restore
+
+# 备份仓库测试数据（示例）
+test_repo/
+test_backup/
+test_restore/
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+
