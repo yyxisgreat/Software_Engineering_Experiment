@@ -27,8 +27,9 @@ void printUsage(const char* program_name) {
 }
 
 int main(int argc, char* argv[]) {
+    // at least 4 arguments: program name, command, source_root, repo_path
     if (argc < 4) {
-        printUsage(argv[0]);
+        printUsage(argv[0]); // print usage and exit
         return 1;
     }
 
@@ -44,8 +45,8 @@ int main(int argc, char* argv[]) {
         std::filesystem::path repo_path = argv[3];
 
         // 解析过滤器选项
-        std::unique_ptr<PathFilter> filter = std::make_unique<PathFilter>();
-        bool has_filter = false;
+        std::unique_ptr<PathFilter> filter = std::make_unique<PathFilter>(); // create a new path filter
+        bool has_filter = false; // flag to check if the filter is settled
         for (int i = 4; i < argc; i++) {
             std::string arg = argv[i];
             if (arg == "--include" && i + 1 < argc) {
