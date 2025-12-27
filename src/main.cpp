@@ -6,6 +6,12 @@
 #include "core/backup.h"
 #include "core/restore.h"
 #include "filters/path_filter.h"
+#include "filters/filter_chain.h"
+#include "filters/file_type_filter.h"
+#include "filters/name_filter.h"
+#include "filters/time_filter.h"
+#include "filters/size_filter.h"
+#include "filters/user_filter.h"
 
 using namespace backuprestore;
 
@@ -19,6 +25,14 @@ void printUsage(const char* program_name) {
     std::cout << "选项:" << std::endl;
     std::cout << "  --include <路径>    包含路径（可多次指定）" << std::endl;
     std::cout << "  --exclude <路径>    排除路径（可多次指定）" << std::endl;
+    std::cout << "  --type <类型>       按文件类型过滤，类型包括 regular, symlink, fifo, block, char, socket" << std::endl;
+    std::cout << "  --name-contains <关键字> 按文件名包含关键字过滤（可多次指定）" << std::endl;
+    std::cout << "  --mtime-after <时间戳>    按修改时间下界过滤（Unix时间戳）" << std::endl;
+    std::cout << "  --mtime-before <时间戳>   按修改时间上界过滤（Unix时间戳）" << std::endl;
+    std::cout << "  --min-size <字节>        最小文件大小过滤" << std::endl;
+    std::cout << "  --max-size <字节>        最大文件大小过滤" << std::endl;
+    std::cout << "  --uid <用户ID>           按文件所属用户ID过滤" << std::endl;
+    std::cout << "  --gid <组ID>             按文件所属组ID过滤" << std::endl;
     std::cout << std::endl;
     std::cout << "示例:" << std::endl;
     std::cout << "  " << program_name << " backup /home/user/docs /backup/repo" << std::endl;
@@ -44,18 +58,104 @@ int main(int argc, char* argv[]) {
         std::filesystem::path source_root = argv[2];
         std::filesystem::path repo_path = argv[3];
 
+        // 创建过滤器链
+        std::unique_ptr<FilterChain> chain = std::make_unique<FilterChain>();
+
+        // 单独的过滤器实例
+        auto pathFilter = std::make_unique<PathFilter>();
+        bool pathUsed = false;
+        auto typeFilter = std::make_unique<FileTypeFilter>();
+        bool typeUsed = false;
+        auto nameFilter = std::make_unique<NameFilter>();
+        bool nameUsed = false;
+        auto timeFilter = std::make_unique<TimeFilter>();
+        bool timeUsed = false;
+        auto sizeFilter = std::make_unique<SizeFilter>();
+        bool sizeUsed = false;
+        auto userFilter = std::make_unique<UserFilter>();
+        bool userUsed = false;
+
         // 解析过滤器选项
-        std::unique_ptr<PathFilter> filter = std::make_unique<PathFilter>(); // create a new path filter
-        bool has_filter = false; // flag to check if the filter is settled
         for (int i = 4; i < argc; i++) {
             std::string arg = argv[i];
             if (arg == "--include" && i + 1 < argc) {
-                filter->addInclude(argv[++i]);
-                has_filter = true;
+                pathFilter->addInclude(argv[++i]);
+                pathUsed = true;
             } else if (arg == "--exclude" && i + 1 < argc) {
-                filter->addExclude(argv[++i]);
-                has_filter = true;
+                pathFilter->addExclude(argv[++i]);
+                pathUsed = true;
+            } else if (arg == "--type" && i + 1 < argc) {
+                std::string t = argv[++i];
+                if (t == "regular") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::Regular);
+                } else if (t == "symlink") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::Symlink);
+                } else if (t == "fifo") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::Fifo);
+                } else if (t == "block") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::BlockDevice);
+                } else if (t == "char") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::CharacterDevice);
+                } else if (t == "socket") {
+                    typeFilter->addAllowed(FilesystemUtils::FileType::Socket);
+                } else {
+                    std::cerr << "警告: 未知的文件类型过滤: " << t << std::endl;
+                }
+                typeUsed = true;
+            } else if (arg == "--name-contains" && i + 1 < argc) {
+                nameFilter->addContains(argv[++i]);
+                nameUsed = true;
+            } else if (arg == "--mtime-after" && i + 1 < argc) {
+                std::time_t t = std::stoll(argv[++i]);
+                timeFilter->setAfter(t);
+                timeUsed = true;
+            } else if (arg == "--mtime-before" && i + 1 < argc) {
+                std::time_t t = std::stoll(argv[++i]);
+                timeFilter->setBefore(t);
+                timeUsed = true;
+            } else if (arg == "--min-size" && i + 1 < argc) {
+                std::int64_t s = std::stoll(argv[++i]);
+                sizeFilter->setMinSize(s);
+                sizeUsed = true;
+            } else if (arg == "--max-size" && i + 1 < argc) {
+                std::int64_t s = std::stoll(argv[++i]);
+                sizeFilter->setMaxSize(s);
+                sizeUsed = true;
+            } else if (arg == "--uid" && i + 1 < argc) {
+                std::uint32_t id = static_cast<std::uint32_t>(std::stoul(argv[++i]));
+                userFilter->setUid(id);
+                userUsed = true;
+            } else if (arg == "--gid" && i + 1 < argc) {
+                std::uint32_t id = static_cast<std::uint32_t>(std::stoul(argv[++i]));
+                userFilter->setGid(id);
+                userUsed = true;
             }
+        }
+
+        // 将使用过的过滤器加入链
+        if (pathUsed) {
+            chain->addFilter(std::move(pathFilter));
+        }
+        if (typeUsed) {
+            chain->addFilter(std::move(typeFilter));
+        }
+        if (nameUsed) {
+            chain->addFilter(std::move(nameFilter));
+        }
+        if (timeUsed) {
+            chain->addFilter(std::move(timeFilter));
+        }
+        if (sizeUsed) {
+            chain->addFilter(std::move(sizeFilter));
+        }
+        if (userUsed) {
+            chain->addFilter(std::move(userFilter));
+        }
+
+        const FilterBase* filter_ptr = nullptr;
+        // 判断是否有过滤器添加
+        if ((pathUsed || typeUsed || nameUsed || timeUsed || sizeUsed || userUsed)) {
+            filter_ptr = chain.get();
         }
 
         // 创建仓库
@@ -67,8 +167,7 @@ int main(int argc, char* argv[]) {
 
         // 执行备份
         Backup backup(repo);
-        const FilterBase* filter_ptr = has_filter ? filter.get() : nullptr;
-        
+
         if (!backup.execute(source_root, filter_ptr)) {
             std::cerr << "备份失败" << std::endl;
             return 1;

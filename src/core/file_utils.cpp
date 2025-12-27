@@ -12,7 +12,9 @@ void FileUtils::getFilesRecursive(const std::filesystem::path& root,
     }
 
     for (const auto& entry : std::filesystem::recursive_directory_iterator(root)) {
-        if (entry.is_regular_file() || entry.is_symlink()) {
+        // 收集除目录外的所有文件类型。
+        // 其他类型（FIFO、设备等）通过 FilesystemUtils 进一步判断是否支持
+        if (!entry.is_directory()) {
             files.push_back(entry.path());
         }
     }

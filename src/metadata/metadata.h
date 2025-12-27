@@ -3,6 +3,7 @@
 #include <string>
 #include <filesystem>
 #include <cstdint>
+#include "metadata/filesystem.h"
 #include <ctime>
 
 namespace backuprestore {
@@ -20,6 +21,20 @@ public:
     std::uint32_t gid = 0;       // 组ID（预留）
     bool is_symlink = false;     // 是否为符号链接
     std::string symlink_target;  // 符号链接目标（如果适用）
+
+    /**
+     * @brief 文件类型
+     * 使用 FilesystemUtils::FileType 枚举表示不同类型
+     * Regular/Symlink 已实现；BlockDevice/CharacterDevice/Fifo/Socket 等预留
+     */
+    backuprestore::FilesystemUtils::FileType file_type = backuprestore::FilesystemUtils::FileType::Regular;
+
+    /**
+     * @brief 设备文件的主次设备号
+     * 仅当 file_type 为 BlockDevice 或 CharacterDevice 时有效
+     */
+    std::uint32_t dev_major = 0;
+    std::uint32_t dev_minor = 0;
 
     /**
      * @brief 从文件系统读取元数据

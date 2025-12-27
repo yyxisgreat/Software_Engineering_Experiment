@@ -4,6 +4,9 @@
 #include <utime.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <array>
+#include <sys/sysmacros.h>
+#include "metadata/filesystem.h"
 #include <sstream>
 #include <iostream>
 
@@ -41,6 +44,18 @@ bool Metadata::loadFromStat(const std::filesystem::path& path) {
     mtime = st.st_mtime;
     uid = st.st_uid;  // 预留
     gid = st.st_gid;  // 预留
+
+    // 设置文件类型
+    file_type = FilesystemUtils::getFileType(path);
+    // 如果是块设备或字符设备，记录主次设备号
+    if (file_type == FilesystemUtils::FileType::BlockDevice ||
+        file_type == FilesystemUtils::FileType::CharacterDevice) {
+        dev_major = major(st.st_rdev);
+        dev_minor = minor(st.st_rdev);
+    } else {
+        dev_major = 0;
+        dev_minor = 0;
+    }
 
     return true;
 }
@@ -80,36 +95,43 @@ bool Metadata::applyToFile(const std::filesystem::path& path) const {
 
 std::string Metadata::serialize() const {
     std::ostringstream oss;
-    oss << mode << ":" << mtime << ":" << uid << ":" << gid 
+    // 序列化格式：
+    // mode:mtime:uid:gid:file_type:dev_major:dev_minor:is_symlink:symlink_target
+    oss << mode << ":" << mtime << ":" << uid << ":" << gid << ":"
+        << static_cast<int>(file_type) << ":" << dev_major << ":" << dev_minor
         << ":" << (is_symlink ? 1 : 0) << ":" << symlink_target;
     return oss.str();
 }
 
 bool Metadata::deserialize(const std::string& data) {
     // 期望格式：
-    // mode:mtime:uid:gid:is_symlink:symlink_target(可包含冒号)
-    std::array<std::string, 6> fields;
+    // mode:mtime:uid:gid:file_type:dev_major:dev_minor:is_symlink:symlink_target(可包含冒号)
+    // 其中 file_type 使用枚举的整数表示
+    std::array<std::string, 9> fields;
     size_t start = 0;
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 8; ++i) {
         size_t pos = data.find(':', start);
         if (pos == std::string::npos) return false;
         fields[i] = data.substr(start, pos - start);
         start = pos + 1;
     }
-    fields[5] = data.substr(start); // 剩余全部
+    // 第 8 个字段之后的剩余部分作为 symlink_target
+    fields[8] = data.substr(start);
 
     try {
         mode = std::stoul(fields[0]);
         mtime = std::stoll(fields[1]);
         uid  = std::stoul(fields[2]);
         gid  = std::stoul(fields[3]);
-
-        int s = std::stoi(fields[4]);
+        int ft = std::stoi(fields[4]);
+        file_type = static_cast<FilesystemUtils::FileType>(ft);
+        dev_major = std::stoul(fields[5]);
+        dev_minor = std::stoul(fields[6]);
+        int s = std::stoi(fields[7]);
         if (s != 0 && s != 1) return false;
         is_symlink = (s == 1);
-
-        symlink_target = fields[5]; // 可为空（看你是否允许）
+        symlink_target = fields[8]; // 可能为空
     } catch (const std::exception& e) {
         std::cerr << "反序列化元数据失败: " << e.what() << std::endl;
         return false;

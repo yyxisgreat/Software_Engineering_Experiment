@@ -28,6 +28,12 @@ set(METADATA_SOURCES
 set(FILTER_SOURCES
     src/filters/path_filter.cpp
     src/filters/filter_base.cpp
+    src/filters/filter_chain.cpp
+    src/filters/file_type_filter.cpp
+    src/filters/name_filter.cpp
+    src/filters/time_filter.cpp
+    src/filters/size_filter.cpp
+    src/filters/user_filter.cpp
 )
 
 set(STORAGE_SOURCES
