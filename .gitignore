@@ -33,4 +33,13 @@ test_restore/
 .DS_Store
 Thumbs.db
 
+# demo/test outputs (generated)
+demo_src/
+demo_repo/
+demo_dst/
+
+# build outputs
+build/
+
+
 
