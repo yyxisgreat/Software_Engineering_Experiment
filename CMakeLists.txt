@@ -34,6 +34,14 @@ set(STORAGE_SOURCES
     src/storage/pack_store.cpp
     src/storage/compressor.cpp
     src/storage/encryptor.cpp
+
+    # ===== 新增：package 导入导出功能（打包/压缩/加密）=====
+    src/storage/package/compress_rle.cpp
+    src/storage/package/encrypt_xor.cpp
+    src/storage/package/encrypt_rc4.cpp
+    src/storage/package/pack_header.cpp
+    src/storage/package/pack_toc.cpp
+    src/storage/package/package_export.cpp
 )
 
 set(SOURCES
@@ -50,4 +58,6 @@ add_executable(backup-restore ${SOURCES})
 # 链接库（仅使用系统库）
 target_link_libraries(backup-restore)
 
-
+if(WIN32)
+    target_link_libraries(backup-restore kernel32 user32)
+endif()

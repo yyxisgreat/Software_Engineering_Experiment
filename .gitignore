@@ -9,6 +9,7 @@ cmake_install.cmake
 Makefile
 *.cmake
 !CMakeLists.txt
+compile_commands.json
 
 # 编译产物
 *.o
@@ -18,9 +19,11 @@ Makefile
 backup-restore
 
 # 备份仓库测试数据（示例）
+*.sepkg
 test_repo/
 test_backup/
 test_restore/
+test/*.sepkg
 
 # IDE 文件
 .vscode/
@@ -33,4 +36,20 @@ test_restore/
 .DS_Store
 Thumbs.db
 
+# build output
+build/
+cmake-build-*/
+
+# package / test artifacts
+*.sepkg
+test/repo/
+test/target/
+test/repochcp/
+
+# cmake generated
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
 
