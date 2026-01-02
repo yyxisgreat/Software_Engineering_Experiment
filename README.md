@@ -96,9 +96,9 @@ make
     │   ├── filter_base.cpp/h # 过滤器基类
     │   └── path_filter.cpp/h # 路径过滤器（已实现）
     ├── storage/            # 存储扩展接口
-    │   ├── pack_store.cpp/h # 打包接口（预留）
-    │   ├── compressor.cpp/h # 压缩接口（预留）
-    │   └── encryptor.cpp/h  # 加密接口（预留）
+    │   ├── pack_store.cpp/h # 打包接口
+    │   ├── compressor.cpp/h # 压缩接口
+    │   └── encryptor.cpp/h  # 加密接口
     └── gui/                # GUI 接口模块
         ├── gui_interface.h  # GUI 进度回调和操作接口（已定义）
         └── gui_interface.cpp # GUI 接口实现（已实现）
