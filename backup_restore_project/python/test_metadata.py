@@ -1,15 +1,4 @@
-"""Simple test to verify metadata preservation during backup/restore.
 
-This script creates a file with specific permissions and modification
-time, backs it up into a repository using the netdisk API, restores
-it to a new location, and then compares the mode and modification
-time of the restored file to ensure they match the source.  UID/GID
-preservation is skipped because it requires root privileges.
-
-To run the test:
-
-    python3 test_metadata.py
-"""
 
 import os
 import time
