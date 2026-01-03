@@ -1,0 +1,120 @@
+2026-01-03T06:25:35.372Z [info] [proc] 正在执行命令: /usr/bin/cmake --version
+2026-01-03T06:25:35.373Z [debug] [proc]   环境为 {"USER":"xiaowangzi","VSCODE_WSL_EXT_LOCATION":"/mnt/c/Users/PC/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3","SHLVL":"0","HOME":"/home/xiaowangzi","DBUS_SESSION_BUS_ADDRESS":"unix:path=/run/user/1000/bus","WSL_DISTRO_NAME":"Ubuntu","WAYLAND_DISPLAY":"wayland-0","LOGNAME":"xiaowangzi","NAME":"DESKTOP-4KAIH6U","WSL_INTEROP":"/run/WSL/372_interop","PULSE_SERVER":"unix:/mnt/wslg/PulseServer","_":"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/node","TERM":"xterm-256color","PATH":"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/PC/AppData/Local/Microsoft/WindowsApps:/mnt/d/app1/Microsoft VS Code/bin:/snap/bin","XDG_RUNTIME_DIR":"/run/user/1000/","DISPLAY":":0","LANG":"C.UTF-8","SHELL":"/bin/bash","PWD":"/mnt/d/app1/Microsoft VS Code","WSL2_GUI_APPS_ENABLED":"1","HOSTTYPE":"x86_64","WSLENV":"VSCODE_WSL_EXT_LOCATION/up","VSCODE_CWD":"/mnt/d/app1/Microsoft VS Code","VSCODE_NLS_CONFIG":"{\"userLocale\":\"zh-cn\",\"osLocale\":\"zh-cn\",\"resolvedLanguage\":\"zh-cn\",\"defaultMessagesFile\":\"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/out/nls.messages.json\",\"languagePack\":{\"translationsConfigFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/tcf.json\",\"messagesFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/994fd12f8d3a5aa16f17d42c041e5809167e845a/nls.messages.json\",\"corruptMarkerFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/corrupted.info\"},\"locale\":\"zh-cn\",\"availableLanguages\":{\"*\":\"zh-cn\"},\"_languagePackId\":\"dec5c02ea40631d4c3a33602ff1ba952.zh-cn\",\"_languagePackSupport\":true,\"_translationsConfigFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/tcf.json\",\"_cacheRoot\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn\",\"_resolvedLanguagePackCoreLocation\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/994fd12f8d3a5aa16f17d42c041e5809167e845a\",\"_corruptedFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/corrupted.info\"}","VSCODE_HANDLES_SIGPIPE":"true","LS_COLORS":"rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:","LESSCLOSE":"/usr/bin/lesspipe %s %s","LESSOPEN":"| /usr/bin/lesspipe %s","XDG_DATA_DIRS":"/usr/local/share:/usr/share:/var/lib/snapd/desktop","VSCODE_ESM_ENTRYPOINT":"vs/workbench/api/node/extensionHostProcess","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_RECONNECTION_GRACE_TIME":"10800000","ELECTRON_RUN_AS_NODE":"1","VSCODE_IPC_HOOK_CLI":"/run/user/1000/vscode-ipc-c462f1aa-6106-4e4d-a71a-ff192a5214cb.sock","APPLICATION_INSIGHTS_NO_STATSBEAT":"true"}
+2026-01-03T06:25:19.937Z [info] [proc] 正在执行命令: /usr/bin/cmake -E capabilities
+2026-01-03T06:25:19.937Z [debug] [proc]   环境为 {"USER":"xiaowangzi","VSCODE_WSL_EXT_LOCATION":"/mnt/c/Users/PC/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3","SHLVL":"0","HOME":"/home/xiaowangzi","DBUS_SESSION_BUS_ADDRESS":"unix:path=/run/user/1000/bus","WSL_DISTRO_NAME":"Ubuntu","WAYLAND_DISPLAY":"wayland-0","LOGNAME":"xiaowangzi","NAME":"DESKTOP-4KAIH6U","WSL_INTEROP":"/run/WSL/372_interop","PULSE_SERVER":"unix:/mnt/wslg/PulseServer","_":"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/node","TERM":"xterm-256color","PATH":"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/PC/AppData/Local/Microsoft/WindowsApps:/mnt/d/app1/Microsoft VS Code/bin:/snap/bin","XDG_RUNTIME_DIR":"/run/user/1000/","DISPLAY":":0","LANG":"C.UTF-8","SHELL":"/bin/bash","PWD":"/mnt/d/app1/Microsoft VS Code","WSL2_GUI_APPS_ENABLED":"1","HOSTTYPE":"x86_64","WSLENV":"VSCODE_WSL_EXT_LOCATION/up","VSCODE_CWD":"/mnt/d/app1/Microsoft VS Code","VSCODE_NLS_CONFIG":"{\"userLocale\":\"zh-cn\",\"osLocale\":\"zh-cn\",\"resolvedLanguage\":\"zh-cn\",\"defaultMessagesFile\":\"/home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/out/nls.messages.json\",\"languagePack\":{\"translationsConfigFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/tcf.json\",\"messagesFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/994fd12f8d3a5aa16f17d42c041e5809167e845a/nls.messages.json\",\"corruptMarkerFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/corrupted.info\"},\"locale\":\"zh-cn\",\"availableLanguages\":{\"*\":\"zh-cn\"},\"_languagePackId\":\"dec5c02ea40631d4c3a33602ff1ba952.zh-cn\",\"_languagePackSupport\":true,\"_translationsConfigFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/tcf.json\",\"_cacheRoot\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn\",\"_resolvedLanguagePackCoreLocation\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/994fd12f8d3a5aa16f17d42c041e5809167e845a\",\"_corruptedFile\":\"/home/xiaowangzi/.vscode-server/data/clp/dec5c02ea40631d4c3a33602ff1ba952.zh-cn/corrupted.info\"}","VSCODE_HANDLES_SIGPIPE":"true","LS_COLORS":"rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:","LESSCLOSE":"/usr/bin/lesspipe %s %s","LESSOPEN":"| /usr/bin/lesspipe %s","XDG_DATA_DIRS":"/usr/local/share:/usr/share:/var/lib/snapd/desktop","VSCODE_ESM_ENTRYPOINT":"vs/workbench/api/node/extensionHostProcess","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_RECONNECTION_GRACE_TIME":"10800000","ELECTRON_RUN_AS_NODE":"1","VSCODE_IPC_HOOK_CLI":"/run/user/1000/vscode-ipc-c462f1aa-6106-4e4d-a71a-ff192a5214cb.sock","APPLICATION_INSIGHTS_NO_STATSBEAT":"true"}
+2026-01-03T06:25:20.226Z [debug] [main] 安全构造新的 CMakeProject 实例
+2026-01-03T06:25:20.226Z [debug] [variant] 正在构造 VariantManager
+2026-01-03T06:25:20.227Z [debug] [main] 构造新的 CMakeProject 实例
+2026-01-03T06:25:20.227Z [debug] [main] 正在启动 CMake 工具第二阶段初始化
+2026-01-03T06:25:20.228Z [debug] [expand] 已展开 ${workspaceFolder}
+2026-01-03T06:25:20.232Z [debug] [kit] 正在读取工具包文件 /home/xiaowangzi/.local/share/CMakeTools/cmake-tools-kits.json
+2026-01-03T06:25:20.286Z [info] [kit] 已成功从 /home/xiaowangzi/.local/share/CMakeTools/cmake-tools-kits.json 加载 1 工具包
+2026-01-03T06:25:20.290Z [debug] [kit] 未读取不存在的工具包文件: /home/xiaowangzi/.vscode/cmake-kits.json
+2026-01-03T06:25:20.321Z [info] [variant] 已加载一组新变量
+2026-01-03T06:25:20.322Z [debug] [main] CMakeProject 实例初始化完成。
+2026-01-03T06:25:24.499Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2026-01-03T06:25:35.972Z [debug] [kit] 未读取不存在的工具包文件: /home/xiaowangzi/.vscode/cmake-kits.json
+2026-01-03T06:25:35.993Z [info] [variant] 已加载一组新变量
+2026-01-03T06:25:36.247Z [debug] [kit] 未读取不存在的工具包文件: /home/xiaowangzi/.vscode/cmake-kits.json
+2026-01-03T06:25:36.262Z [info] [variant] 已加载一组新变量
+2026-01-03T06:29:03.235Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2026-01-03T06:36:33.862Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+��动 CMake 驱动程序: 未选择任何工具包
+2026-01-03T03:29:39.100Z [debug] [extension] 停用 CMakeTools
+ke 驱动程序: 未选择任何工具包
+2025-12-27T06:58:24.312Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-27T07:11:52.743Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-27T07:13:41.858Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-27T07:13:41.932Z [debug] [extension] 停用 CMakeTools
+径 undefined\msys64\clangarm64\bin
+2025-12-26T12:28:38.048Z [debug] [kit] 已在目录 undefined\msys64\clangarm64\bin 中找到 0 工具包
+2025-12-26T12:28:38.048Z [debug] [kit] 正在跳过扫描不存在的路径 undefined\msys64\ucrt64\bin
+2025-12-26T12:28:38.048Z [debug] [kit] 已在目录 undefined\msys64\ucrt64\bin 中找到 0 工具包
+2025-12-26T12:28:38.049Z [debug] [kit] 正在扫描编译器的目录 /mnt/c/Users/PC/AppData/Local/Microsoft/WindowsApps
+2025-12-26T12:28:38.050Z [debug] [kit] 已在目录 /home/xiaowangzi/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/bin/remote-cli 中找到 0 工具包
+2025-12-26T12:28:38.050Z [debug] [kit] 已在目录 /usr/local/bin 中找到 0 工具包
+2025-12-26T12:28:38.050Z [debug] [kit] 已在目录 /usr/local/sbin 中找到 0 工具包
+2025-12-26T12:28:38.064Z [debug] [kit] 已在目录 /usr/sbin 中找到 0 工具包
+2025-12-26T12:28:38.065Z [debug] [kit] 已在目录 /usr/games 中找到 0 工具包
+2025-12-26T12:28:38.070Z [debug] [kit] 已在目录 /sbin 中找到 0 工具包
+2025-12-26T12:28:38.070Z [debug] [kit] 已在目录 /usr/local/games 中找到 0 工具包
+2025-12-26T12:28:38.074Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/c89-gcc
+2025-12-26T12:28:38.074Z [info] [proc] 正在执行命令: /bin/c89-gcc -v
+2025-12-26T12:28:38.087Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/c99-gcc
+2025-12-26T12:28:38.087Z [info] [proc] 正在执行命令: /bin/c99-gcc -v
+2025-12-26T12:28:38.097Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/gcc
+2025-12-26T12:28:38.098Z [info] [proc] 正在执行命令: /bin/gcc -v
+2025-12-26T12:28:38.101Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/gcc-13
+2025-12-26T12:28:38.102Z [info] [proc] 正在执行命令: /bin/gcc-13 -v
+2025-12-26T12:28:38.117Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/x86_64-linux-gnu-gcc
+2025-12-26T12:28:38.117Z [info] [proc] 正在执行命令: /bin/x86_64-linux-gnu-gcc -v
+2025-12-26T12:28:38.121Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/x86_64-linux-gnu-gcc-13
+2025-12-26T12:28:38.121Z [info] [proc] 正在执行命令: /bin/x86_64-linux-gnu-gcc-13 -v
+2025-12-26T12:28:38.127Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/c89-gcc
+2025-12-26T12:28:38.128Z [info] [proc] 正在执行命令: /usr/bin/c89-gcc -v
+2025-12-26T12:28:38.131Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/c99-gcc
+2025-12-26T12:28:38.131Z [info] [proc] 正在执行命令: /usr/bin/c99-gcc -v
+2025-12-26T12:28:38.138Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/gcc
+2025-12-26T12:28:38.139Z [info] [proc] 正在执行命令: /usr/bin/gcc -v
+2025-12-26T12:28:38.143Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/gcc-13
+2025-12-26T12:28:38.143Z [info] [proc] 正在执行命令: /usr/bin/gcc-13 -v
+2025-12-26T12:28:38.159Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/x86_64-linux-gnu-gcc
+2025-12-26T12:28:38.159Z [info] [proc] 正在执行命令: /usr/bin/x86_64-linux-gnu-gcc -v
+2025-12-26T12:28:38.164Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/x86_64-linux-gnu-gcc-13
+2025-12-26T12:28:38.164Z [info] [proc] 正在执行命令: /usr/bin/x86_64-linux-gnu-gcc-13 -v
+2025-12-26T12:28:38.172Z [debug] [kit] 已在目录 /mnt/c/WINDOWS 中找到 0 工具包
+2025-12-26T12:28:38.173Z [debug] [kit] 已在目录 /usr/lib/wsl/lib 中找到 0 工具包
+2025-12-26T12:28:38.173Z [debug] [kit] 已在目录 /mnt/c/WINDOWS/System32/OpenSSH 中找到 0 工具包
+2025-12-26T12:28:38.179Z [debug] [kit] 已在目录 /mnt/c/WINDOWS/System32/Wbem 中找到 0 工具包
+2025-12-26T12:28:38.179Z [debug] [kit] 已在目录 /mnt/c/Program Files/Google/Chrome/Application 中找到 0 工具包
+2025-12-26T12:28:38.180Z [debug] [kit] 已在目录 /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0 中找到 0 工具包
+2025-12-26T12:28:38.276Z [debug] [kit] 已在目录 /mnt/c/WINDOWS/system32 中找到 0 工具包
+2025-12-26T12:28:38.277Z [debug] [kit] 已在目录 /mnt/c/Users/PC/AppData/Local/Microsoft/WindowsApps 中找到 0 工具包
+2025-12-26T12:28:38.284Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/x86_64-linux-gnu-gcc-13
+2025-12-26T12:28:38.285Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/x86_64-linux-gnu-gcc
+2025-12-26T12:28:38.286Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/gcc-13
+2025-12-26T12:28:38.287Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/gcc
+2025-12-26T12:28:38.288Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/c99-gcc
+2025-12-26T12:28:38.289Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/c89-gcc
+2025-12-26T12:28:38.290Z [debug] [kit] 检测到 GCC 编译器: /bin/x86_64-linux-gnu-gcc-13
+2025-12-26T12:28:38.291Z [debug] [kit] 检测到 GCC 编译器: /bin/x86_64-linux-gnu-gcc
+2025-12-26T12:28:38.292Z [debug] [kit] 检测到 GCC 编译器: /bin/gcc-13
+2025-12-26T12:28:38.293Z [debug] [kit] 检测到 GCC 编译器: /bin/gcc
+2025-12-26T12:28:38.294Z [debug] [kit] 检测到 GCC 编译器: /bin/c99-gcc
+2025-12-26T12:28:38.295Z [debug] [kit] 检测到 GCC 编译器: /bin/c89-gcc
+2025-12-26T12:28:38.306Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/c99-gcc
+2025-12-26T12:28:38.307Z [info] [proc] 正在执行命令: /usr/bin/c99-gcc -v
+2025-12-26T12:28:38.311Z [debug] [kit] 正在测试 GCC 二进制文件: /usr/bin/c89-gcc
+2025-12-26T12:28:38.312Z [info] [proc] 正在执行命令: /usr/bin/c89-gcc -v
+2025-12-26T12:28:38.315Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/c99-gcc
+2025-12-26T12:28:38.316Z [info] [proc] 正在执行命令: /bin/c99-gcc -v
+2025-12-26T12:28:38.319Z [debug] [kit] 正在测试 GCC 二进制文件: /bin/c89-gcc
+2025-12-26T12:28:38.319Z [info] [proc] 正在执行命令: /bin/c89-gcc -v
+2025-12-26T12:28:38.325Z [debug] [kit] 检测到 GCC 编译器: /bin/c99-gcc
+2025-12-26T12:28:38.326Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/c89-gcc
+2025-12-26T12:28:38.327Z [debug] [kit] 检测到 GCC 编译器: /usr/bin/c99-gcc
+2025-12-26T12:28:38.328Z [debug] [kit] 已在目录 /usr/bin 中找到 6 工具包
+2025-12-26T12:28:38.329Z [debug] [kit] 检测到 GCC 编译器: /bin/c89-gcc
+2025-12-26T12:28:38.330Z [debug] [kit] 已在目录 /bin 中找到 6 工具包
+2025-12-26T12:28:38.330Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.330Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.331Z [info] [kit] 已找到工具包(受信任): GCC 13.3.0 x86_64-linux-gnu
+2025-12-26T12:28:38.332Z [debug] [kitsController] 正在将工具包保存到 /home/xiaowangzi/.local/share/CMakeTools/cmake-tools-kits.json
+2025-12-26T12:28:38.332Z [debug] [kitsController] 正在将新工具包保存到 /home/xiaowangzi/.local/share/CMakeTools/cmake-tools-kits.json
+2025-12-26T12:28:39.055Z [debug] [extension] 正在打开的 /home/xiaowangzi/Software_Engineering_Experiment 上配置工作区
+2025-12-26T12:28:39.056Z [debug] [kitsController] 开始选择工具包。已找到 4 个工具包。
+2025-12-26T12:28:39.056Z [debug] [kitsController] 正在打开工具包选项快速选择
+2025-12-26T12:28:42.946Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-26T12:29:09.391Z [debug] [kitsController] 用户已取消工具包选择
+2025-12-26T12:34:17.084Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-26T12:36:33.139Z [debug] [main] 未启动 CMake 驱动程序: 未选择任何工具包
+2025-12-26T14:10:35.105Z [debug] [extension] 停用 CMakeTools
