@@ -1,20 +1,4 @@
-"""
-netdisk_gui.py
----------------
 
-This module implements a simple graphical user interface for the
-backup/restore utility provided in ``netdisk.py``. The GUI is built
-using Tkinter and organized into three tabs: Backup, Restore, and
-Package. It allows the user to back up a directory tree into a
-repository, apply various filters, restore data back to a target
-directory, and export/import repositories into single-file packages
-with optional compression and encryption.
-
-Note: Running this GUI requires a graphical environment. When
-executed in the provided runtime, the GUI will open in a separate
-window allowing manual interaction. Progress bars update during
-long-running operations.
-"""
 
 import os
 import threading
