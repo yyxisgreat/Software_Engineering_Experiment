@@ -1,36 +1,4 @@
-"""Run comprehensive tests for the backup/restore tool.
 
-This script exercises the functionality provided by the ``netdisk`` module
-included in this project.  It goes beyond the simple smoke tests to
-validate filter behaviour, metadata preservation and package export/
-import under various algorithm combinations.  Each test outputs a
-summary of the operations performed and whether they passed or
-failed.  The script uses temporary directories so it does not
-interfere with existing files on the system.
-
-To execute the tests, run ``python3 run_tests.py`` from the root of
-the ``solution`` directory.  At least three distinct test scenarios
-are covered:
-
-1. **Basic backup and restore:** verifies that regular files,
-   symbolic links, FIFOs and nested directories are correctly
-   archived and later restored with their contents and types intact.
-
-2. **Filter behaviour:** exercises include/exclude path filters,
-   file type filters and name filters to ensure only matching files
-   are stored.  It also prints the number of skipped files so you
-   can confirm the filter logic.
-
-3. **Packaging, compression and encryption:** exports a repository
-   using both per‑file headers and table‑of‑contents modes, applies
-   RLE compression, XOR and RC4 encryption, and then imports the
-   package back into a repository.  This test also checks that
-   attempting to decrypt with an incorrect password triggers an
-   exception.
-
-These tests collectively cover the major grading criteria, from
-metadata support to advanced storage options.
-"""
 
 import os
 import stat
